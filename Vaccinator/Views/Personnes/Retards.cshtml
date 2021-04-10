@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Vaccinator.Models.Injection>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Retards de rappel des prises</h1>
+
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Personne.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RappelDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VaccinType.Nom)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Personne.Nom)
+                    @Html.DisplayFor(modelItem => item.Personne.Prenom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RappelDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VaccinType.Nom)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

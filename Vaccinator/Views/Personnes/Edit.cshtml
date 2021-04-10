@@ -1,0 +1,53 @@
+﻿@model Vaccinator.Models.Personne
+
+@{
+    ViewData["Title"] = "Édition";
+}
+
+<h1>Éditer un profil de vacciné(e)</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nom" class="control-label"></label>
+                <input asp-for="Nom" class="form-control" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Prenom" class="control-label"></label>
+                <input asp-for="Prenom" class="form-control" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sexe" class="control-label"></label>
+                @Html.DropDownListFor(model => model.Sexe, (SelectList)ViewData["ListeSexe"], "", new { @class = "form-control" })
+                <span asp-validation-for="Sexe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+                <span asp-validation-for="BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Statut" class="control-label"></label>
+                @Html.DropDownListFor(model => model.Statut, (SelectList)ViewData["ListeStatut"], "", new { @class = "form-control" })
+                <span asp-validation-for="Statut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

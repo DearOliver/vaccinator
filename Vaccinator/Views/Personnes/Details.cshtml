@@ -1,0 +1,48 @@
+﻿@model Vaccinator.Models.Personne
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Détails du profil de vacciné(e)</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Prenom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Prenom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sexe)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sexe)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Statut)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Statut)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Éditer</a> |
+    <a asp-action="Injections" asp-route-id="@Model.Id">Injections</a> |
+    <a asp-action="Index">Retour</a>
+</div>

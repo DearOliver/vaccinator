@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Vaccinator.Models.VaccinType>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Dashboard des vaccins</h1>
+
+<p>
+    <a asp-action="Create">Création d'un nouveau vaccin</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cible)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscoveryYear)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cible)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscoveryYear)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Éditer</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Supprimer</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

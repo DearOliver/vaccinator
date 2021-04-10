@@ -1,0 +1,20 @@
+﻿@model Dictionary<string, List<string>>
+
+<h1>Personnes Vaccinées</h1>
+
+<ul>
+    @foreach(var item in Model)
+    {
+        <li>
+            @item.Key : 
+            <ul>
+                @foreach(var value in item.Value)
+                {
+                    <li>
+                        @value
+                    </li>
+                }
+            </ul>
+        </li>
+    }
+</ul>

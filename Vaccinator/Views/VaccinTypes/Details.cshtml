@@ -1,0 +1,37 @@
+﻿@model Vaccinator.Models.VaccinType
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Détails du vaccin</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cible)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cible)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DiscoveryYear)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DiscoveryYear)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Éditer</a> |
+    <a asp-action="NonVaccinesThisYear" asp-route-id="@Model.Id">Non-Vaccinés cette année</a> |
+    <a asp-action="NonVaccines" asp-route-id="@Model.Id">Jamais vaccinés</a> |
+    <a asp-action="Index">Retour</a>
+</div>
